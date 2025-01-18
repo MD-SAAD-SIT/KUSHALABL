@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Transportation Hub</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Custom Styling */
+        .transport-hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 100px 0;
+        }
+#carousel {
+    background-color: #f8f9fa; /* Light background for better contrast */
+    padding: 2rem 0; /* Add vertical spacing */
+}
+
+.carousel-item img {
+    object-fit: cover; /* Ensures images are scaled properly */
+    height: 500px; /* Set a fixed height for the images */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: #fff; /* White text for visibility */
+    padding: 1rem; /* Add spacing inside captions */
+    border-radius: 5px; /* Rounded corners for caption box */
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem; /* Larger heading */
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 1rem; /* Smaller text for description */
+    margin-top: 0.5rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000; /* Black background for icons */
+    border-radius: 50%; /* Circular shape */
+    padding: 0.5rem; /* Adjust padding for better size */
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #007bff; /* Highlight on hover */
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px; /* Adjust image height for smaller screens */
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+        .service-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#main-navbar">
+
+    <!-- Navigation -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-bus-alt"></i> Urban Mobility System
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#routes" class="nav-link">Routes</a></li>
+                    <li class="nav-item"><a href="#tracking" class="nav-link">Live Tracking</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="transport-hero text-center">
+        <div class="container">
+            <h1 class="display-4">Smart City Transportation</h1>
+            <p class="lead">Intelligent Mobility Solutions for Modern Urban Living</p>
+            <a href="#services" class="btn btn-outline-light mt-3">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section id="carousel" class="my-5">
+        <div class="container">
+            <div id="transportCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/img1.jpeg"
+                            class="d-block w-100" alt="Bus Network">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Public Bus Network</h5>
+                            <p>City-wide bus routes offering accessibility to all areas.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/img2.jpeg"
+                            class="d-block w-100" alt="Metro Services">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Metro Services</h5>
+                            <p>High-speed metro connectivity for easy commuting.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/img3.jpg"
+                            class="d-block w-100" alt="Bike Sharing">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Bike Sharing</h5>
+                            <p>Eco-friendly, convenient transport for short trips.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#transportCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#transportCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transportation Services -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Transportation Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-bus fa-3x text-primary mb-3"></i>
+                        <h4>Public Bus Network</h4>
+                        <p>Comprehensive city-wide bus routes</p>
+                        <span class="badge bg-success">Real-time Tracking</span>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-subway fa-3x text-info mb-3"></i>
+                        <h4>Metro Services</h4>
+                        <p>Fast and efficient metro connectivity</p>
+                        <span class="badge bg-warning">High Frequency</span>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-bicycle fa-3x text-success mb-3"></i>
+                        <h4>Bike Sharing</h4>
+                        <p>Eco-friendly last-mile connectivity</p>
+                        <span class="badge bg-danger">Sustainable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Route Mapping -->
+    <section id="routes" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Route Mapping</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Interactive Route Planner</h5>
+                            <!-- Placeholder for Route Map -->
+                            <div class="bg-light p-4 text-center">
+                                Route Map Visualization Area
+                            </div>
+                            <button class="btn btn-primary mt-3 w-100">Plan Your Journey</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section id="table" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Service Schedule</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Service Type</th>
+                        <th scope="col">Frequency</th>
+                        <th scope="col">Operating Hours</th>
+                        <th scope="col">Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Public Bus</td>
+                        <td>Every 10 minutes</td>
+                        <td>6:00 AM - 10:00 PM</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Metro</td>
+                        <td>Every 5 minutes</td>
+                        <td>5:30 AM - 11:00 PM</td>
+                        <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td>Bike Sharing</td>
+                        <td>On-demand</td>
+                        <td>24 Hours</td>
+                        <td>Available</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Book Ticket Now Section -->
+    <section id="book-ticket" class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2>Book Your Tickets Now</h2>
+            <p>Choose your transport mode and book your tickets with ease.</p>
+            <a href="#ticketBookingModal" class="btn btn-light btn-lg" data-bs-toggle="modal">Book Ticket Now</a>
+        </div>
+    </section>
+
+    <!-- Advanced Ticket Booking Modal -->
+    <div class="modal fade" id="ticketBookingModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Smart Ticket Booking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form id="bookingForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Transportation Mode</label>
+                                    <select class="form-select" id="transportMode">
+                                        <option>Bus</option>
+                                        <option>Metro</option>
+                                        <option>Shared Ride</option>
+                                    </select>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">From</label>
+                                        <select class="form-select" required>
+                                            <option>Select Source</option>
+                                            <option>City Center</option>
+                                            <option>University Campus</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">To</label>
+                                        <select class="form-select" required>
+                                            <option>Select Destination</option>
+                                            <option>Tech Park</option>
+                                            <option>Railway Station</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Journey Date</label>
+                                        <input type="date" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Passengers</label>
+                                        <input type="number" class="form-control" min="1" max="6" required>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Seat Preference</label>
+                                    <select class="form-select">
+                                        <option>Any</option>
+                                        <option>Window</option>
+                                        <option>Aisle</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary w-100">
+                                    Search Availability
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-secondary text-white">
+                                    Seat Availability
+                                </div>
+                                <div class="card-body">
+                                    <div class="seat-map text-center">
+                                        <i class="fas fa-bus fa-3x mb-3"></i>
+                                        <p>Select journey details to view seats</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <h3 class="text-center mb-4">Contact Transportation Hub</h3>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Feedback/Query"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white text-center py-3">
+        <p>&copy; 2025 Smart City Transportation. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
